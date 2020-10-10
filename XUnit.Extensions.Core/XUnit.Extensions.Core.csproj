@@ -2,6 +2,7 @@
     <Import Project="$([MSBuild]::GetPathOfFileAbove(package.props))" />
 
     <PropertyGroup>
+        <ProjectGuid>08c4a470-0e4c-4486-9c5e-bd9a764783f0</ProjectGuid>
         <PackageId>XUnit.Extensions.Core</PackageId>
         <PackageDescription>XUnit extensions core</PackageDescription>
         <Version>0.1.1</Version>

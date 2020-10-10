@@ -1,14 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <Import Project="$([MSBuild]::GetPathOfFileAbove(package.props))" />
 
     <PropertyGroup>
+        <ProjectGuid>4bf9faf4-d53b-46e4-a8ef-f9d9da42ab03</ProjectGuid>
         <PackageId>XUnit.Extensions.File</PackageId>
         <PackageDescription>XUnit file data support</PackageDescription>
         <Version>0.1.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj" />
+        <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj" >
+        </ProjectReference>
         <PackageReference Include="DiffPlex" Version="1.6.3" />
         <PackageReference Include="xunit.core" Version="2.4.1" />
         <PackageReference Include="Xunit.DependencyInjection" Version="7.0.2" />

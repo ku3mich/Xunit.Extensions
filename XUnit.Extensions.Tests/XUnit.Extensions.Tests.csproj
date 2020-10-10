@@ -2,6 +2,7 @@
     <Import Project="$([MSBuild]::GetPathOfFileAbove(common.props))" />
 
     <PropertyGroup>
+        <ProjectGuid>358c6df1-f6e3-4ec6-80d8-d4cd4525fd95</ProjectGuid>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <IsPackable>false</IsPackable>
         <RootNamespace>XUnit.Extensions.Tests</RootNamespace>
