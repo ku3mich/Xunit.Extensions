@@ -25,4 +25,4 @@ jobs:
     - name: Pack
       run: dotnet pack -o ./nugets
     - name: Publish Nugets
-      run: nuget push ./nugets/*.nupkg ${{secrets.GITHUB_TOKEN}} -NonInteractive -Src https://nuget.pkg.github.com/ku3mich/index.json
+      run: nuget push ./nugets/*.nupkg ${{secrets.GITHUB_TOKEN}} -NonInteractive -Source https://nuget.pkg.github.com/ku3mich/index.json
