@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
         DOTNET_NOLOGO: true
-        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -25,4 +24,4 @@ jobs:
     - name: Pack
       run: dotnet pack -o ./nugets
     - name: Publish Nugets
-      run: nuget push ./nugets/*.nupkg ${{secrets.GITHUB_TOKEN}} -NonInteractive -Source https://nuget.pkg.github.com/ku3mich/index.json
+      run: nuget push ./nugets/*.nupkg -ApiKey ${{ secrets.GITHUB_TOKEN }} -NonInteractive -Source https://nuget.pkg.github.com/ku3mich/index.json
