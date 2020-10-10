@@ -20,8 +20,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
     - name: Test
-      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
+      run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
     - name: Pack
-      run: dotnet pack -o ./nugets
+      run: dotnet pack --configuration Release -o ./nugets
     - name: Publish Nugets
-      run: nuget push ./nugets/* -ApiKey ${{ secrets.GITHUB_TOKEN }} -NonInteractive -Source https://nuget.pkg.github.com/ku3mich/index.json
+      run: find ./nugets -name '*.nupkg' | xargs -i nuget push {} -k ku3mich:${{ secrets.GITHUB_TOKEN }} -NonInteractive -Source https://nuget.pkg.github.com/ku3mich/index.json
