@@ -26,6 +26,3 @@ jobs:
       run: dotnet pack -o ./nugets
     - name: Publish Nugets
       run: nuget push ./nugets/*.nupkg -ApiKey ${{secrets.GITHUB_TOKEN}} -NonInteractive -src https://nuget.pkg.github.com/ku3mich/index.json
-
-
-      NuGet push <package path> [API key] [options]
