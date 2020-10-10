@@ -12,12 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		common.props = common.props
 		common.targets = common.targets
+		.github\workflows\dotnet-core.yml = .github\workflows\dotnet-core.yml
 		package.props = package.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit.Extensions.Tests", "XUnit.Extensions.Tests\XUnit.Extensions.Tests.csproj", "{33A0BF27-4893-4A54-8855-AB0B488FBD2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnit.Extensions.Essentials", "XUnit.Extensions.Essentials\XUnit.Extensions.Essentials.csproj", "{68CEBE7B-75DB-40A8-B888-8D00C972A5CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnit.Extensions.Essentials", "XUnit.Extensions.Essentials\XUnit.Extensions.Essentials.csproj", "{68CEBE7B-75DB-40A8-B888-8D00C972A5CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
