@@ -24,4 +24,5 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release -o ./nugets
     - name: Publish Nugets
-      run: find ./nugets -name '*.nupkg' | xargs -i nuget push {} ${{ secrets.GITHUB_TOKEN }} -NonInteractive -Source https://nuget.pkg.github.com/ku3mich/index.json
+      run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/ku3mich/index.json -Username ku3mich -Password ${{ secrets.GITHUB_TOKEN }}
+      run: find ./nugets -name '*.nupkg' | xargs -i nuget push {} -Source "GPR" -NonInteractive
