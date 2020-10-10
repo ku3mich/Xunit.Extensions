@@ -19,13 +19,11 @@ jobs:
       env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}        
 
-    - name: Install dependencies
-      run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release
     - name: Test
-      run: dotnet test --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
     - name: Pack
-      run: dotnet pack --no-build --no-restore -o ./nugets
+      run: dotnet pack -o ./nugets
     - name: Publish Nugets
-      run: dotnet nuget push ./nugets/*.nupkg -s 
+      run: dotnet nuget push ./nugets/*.nupkg
