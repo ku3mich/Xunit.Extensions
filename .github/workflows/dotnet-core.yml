@@ -23,11 +23,7 @@ jobs:
       run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
     - name: Pack
       run: dotnet pack --configuration Release -o ./nugets
-
-    - name: Publish nuget
-      run: |
-           for f in ./nugets/*.nupkg
-           do
-             curl -vX PUT -u "ku3mich:${{ secrets.GHPackagesToken }}" -F package=@$f https://nuget.pkg.github.com/ku3mich/
-           done
-      shell: bash
+    - name: Add GPR Source
+      run: nuget sources add -name "GPR" -Source https://github.com/ku3mich/ -Username ku3mich -Password ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish Nugets
+      run: find ./nugets -name '*.nupkg' | xargs -i nuget push {} -Source "GPR" -NonInteractive
