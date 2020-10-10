@@ -18,8 +18,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.x
-    - name: Add GPR Source
-      run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/ku3mich/index.json -Username ku3mich -Password ${{secrets.GITHUB_TOKEN}}
     - name: Build
       run: dotnet build --configuration Release
     - name: Test
@@ -27,4 +25,7 @@ jobs:
     - name: Pack
       run: dotnet pack -o ./nugets
     - name: Publish Nugets
-      run: nuget push ./nugets/*.nupkg -NonInteractive -Source "GPR" -SkipDuplicate  
+      run: nuget push ./nugets/*.nupkg -ApiKey ${{secrets.GITHUB_TOKEN}} -NonInteractive -src https://nuget.pkg.github.com/ku3mich/index.json
+
+
+      NuGet push <package path> [API key] [options]
