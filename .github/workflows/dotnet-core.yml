@@ -21,7 +21,13 @@ jobs:
       run: dotnet build --configuration Release
     - name: Test
       run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
+    - name: Show
+    - run: echo $GITHUB_FEED
     - name: Pack
-      run: dotnet pack --configuration Release -o ./nugets
-    - name: Publish Nugets
-      run: find ./nugets -name '*.nupkg' | xargs -i nuget push {} ${{ secrets.GITHUB_TOKEN }} -Source https://nuget.pkg.github.com/ku3mich/index.json -NonInteractive
+      run: dotnet pack --configuration Release -o ./nupkg
+    - name: Push to GitHub Feed
+        run: |
+          for f in ./nupkg/*.nupkg
+          do
+            curl -vX PUT -u "$GITHUB_USER:$GITHUB_TOKEN" -F package=@$f $GITHUB_FEED
+          done
