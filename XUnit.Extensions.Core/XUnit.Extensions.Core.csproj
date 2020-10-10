@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="$([MSBuild]::GetPathOfFileAbove(package.props))" />
+
+    <PropertyGroup>
+        <PackageId>XUnit.Extensions.Core</PackageId>
+        <PackageDescription>XUnit extensions core</PackageDescription>
+        <Version>0.1.0</Version>
+    </PropertyGroup>
+</Project>

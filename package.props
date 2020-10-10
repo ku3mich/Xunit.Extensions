@@ -1,0 +1,8 @@
+<Project>
+    <Import Project="$([MSBuild]::GetPathOfFileAbove(common.props))" />
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <RepositoryUrl>https://nuget.pkg.github.com/ku3mich/index.json</RepositoryUrl>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    </PropertyGroup>
+</Project>
