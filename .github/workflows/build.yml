@@ -34,7 +34,7 @@ jobs:
       run: |
         ./.sonar/scanner/dotnet-sonarscanner begin /k:"ku3mich_XUnit.Extensions" /o:"ku3mich" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="XUnit.Extensions.Tests/coverage.opencover.xml"
         dotnet build --configuration Release
-        dotnet test --no-build XUnit.Extensions.Tests /p:CollectCoverage=true /p:CoverletOutputFormat=opencover 
+        dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
         ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
     - name: Pack
       run: dotnet pack --configuration Release -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -o ./nupkg
