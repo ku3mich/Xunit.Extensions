@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
         DOTNET_NOLOGO: true
+        DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+        DOTNET_CLI_TELEMETRY_OPTOUT: true
+        NUGET_FEED: https://api.nuget.org/v3/index.json
+        NUGET_KEY: ${{ secrets.NUGET_ORG_API_KEY }}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -21,13 +25,9 @@ jobs:
       run: dotnet build --configuration Release
     - name: Test
       run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
-    - name: Show
-      run: echo $GITHUB_FEED
     - name: Pack
-      run: dotnet pack --configuration Release -o ./nupkg
-    - name: Push to GitHub Feed
-      run: |
-        for f in ./nupkg/*.nupkg
-        do
-        curl -vX PUT -u "$GITHUB_USER:$GITHUB_TOKEN" -F package=@$f $GITHUB_FEED
-        done
+      run: dotnet pack --configuration Release -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -o ./nupkg
+    - name: nupkg push
+      run: find ./nupkg -name '*.nupkg' | nuget push {} $NUGET_KEY -s $NUGET_FEED
+    - name: snupkg push
+      run: find ./nupkg -name '*.snupkg' | nuget push {} $NUGET_KEY -s $NUGET_FEED
