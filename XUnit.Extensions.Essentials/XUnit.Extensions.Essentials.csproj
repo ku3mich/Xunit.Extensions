@@ -3,7 +3,7 @@
     <PropertyGroup>
         <PackageId>XUnit.Extensions.Essentials</PackageId>
         <PackageDescription>XUnit essentials</PackageDescription>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
     </PropertyGroup>
     <ItemGroup>
       <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj" />

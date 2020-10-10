@@ -4,6 +4,6 @@
     <PropertyGroup>
         <PackageId>XUnit.Extensions.Core</PackageId>
         <PackageDescription>XUnit extensions core</PackageDescription>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
     </PropertyGroup>
 </Project>
