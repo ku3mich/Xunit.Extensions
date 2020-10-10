@@ -22,8 +22,7 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
     - name: Show
-    - run: echo $GITHUB_FEED
-      shell: bash
+      run: echo $GITHUB_FEED
     - name: Pack
       run: dotnet pack --configuration Release -o ./nupkg
     - name: Push to GitHub Feed
@@ -32,4 +31,3 @@ jobs:
         do
         curl -vX PUT -u "$GITHUB_USER:$GITHUB_TOKEN" -F package=@$f $GITHUB_FEED
         done
-      shell: bash
