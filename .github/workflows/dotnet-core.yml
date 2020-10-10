@@ -26,4 +26,4 @@ jobs:
     - name: Pack
       run: dotnet pack -o ./nugets
     - name: Publish Nugets
-      run: dotnet nuget -k $NUGET_AUTH_TOKEN push ./nugets/*.nupkg 
+      run: dotnet nuget push -k $NUGET_AUTH_TOKEN ./nugets/*.nupkg 
