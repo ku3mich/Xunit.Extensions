@@ -21,8 +21,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
     - name: Test
-      run: dotnet test --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
+      run: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
     - name: Pack
-      run: dotnet pack  --no-build --no-restore -o ./nugets
+      run: dotnet pack -o ./nugets
     - name: Publish Nugets
       run: dotnet nuget push -k $NUGET_AUTH_TOKEN -s https://nuget.pkg.github.com/ku3mich/index.json ./nugets/*.nupkg 
