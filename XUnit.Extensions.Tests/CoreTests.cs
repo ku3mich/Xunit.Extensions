@@ -24,7 +24,7 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void PathResolverFailsForAbsolutePaths()
         {
-            Assert.Throws<ArgumentException>(() => PathResolver.Instance.Resolve("C:\\"));
+            Assert.Throws<ArgumentException>(() => PathResolver.Instance.Resolve("/"));
         }
     }
 }

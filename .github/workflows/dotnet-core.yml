@@ -1,4 +1,4 @@
-name: .NET Core
+name: build
 
 on:
   push:
@@ -20,8 +20,6 @@ jobs:
     - name: Build
       run: dotnet publish --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-    - name: Publish
-      run: dotnet nuget push 
+      run: dotnet test --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=opencover XUnit.Extensions.Tests
     - name: Publish
       run: dotnet nuget push 
