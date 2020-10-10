@@ -26,7 +26,7 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release -o ./nupkg
     - name: Push to GitHub Feed
-        run: |
+      run: |
           for f in ./nupkg/*.nupkg
           do
             curl -vX PUT -u "$GITHUB_USER:$GITHUB_TOKEN" -F package=@$f $GITHUB_FEED
