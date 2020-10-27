@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace XUnit
+namespace Xunit
 {
     public class PathResolver : IPathResolver
     {

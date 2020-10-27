@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using Xunit.Sdk;
 
-namespace XUnit
+namespace Xunit
 {
     public class FileContentAttribute : DataAttribute
     {

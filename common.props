@@ -1,17 +1,17 @@
 <Project>
-    <PropertyGroup>
-        <RootNamespace>XUnit</RootNamespace>
-        <Authors>Serhii Kuzmychov</Authors>
-        <Company>PE Kuzmychov S.V.</Company>
-        <RepositoryUrl>https://github.com/ku3mich/XUnit.Extensions/</RepositoryUrl>
-    </PropertyGroup>
+	<PropertyGroup>
+		<RootNamespace>Xunit</RootNamespace>
+		<Authors>Serhii Kuzmychov</Authors>
+		<Company />
+		<RepositoryUrl>https://github.com/ku3mich/XUnit.Extensions/</RepositoryUrl>
+	</PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Update="SonarAnalyzer.CSharp" Version="8.13.1.21947">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
-    </ItemGroup>
-    <Import Project="common.targets" />
+	<ItemGroup>
+		<PackageReference Update="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
+	</ItemGroup>
+	<Import Project="common.targets" />
 </Project>

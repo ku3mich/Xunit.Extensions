@@ -1,4 +1,4 @@
-﻿namespace XUnit
+﻿namespace Xunit
 {
     public interface IDiff
     {

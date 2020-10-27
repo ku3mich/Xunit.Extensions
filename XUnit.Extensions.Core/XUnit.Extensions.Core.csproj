@@ -5,6 +5,10 @@
         <ProjectGuid>08c4a470-0e4c-4486-9c5e-bd9a764783f0</ProjectGuid>
         <PackageId>XUnit.Extensions.Core</PackageId>
         <PackageDescription>XUnit extensions core</PackageDescription>
-        <Version>0.1.1</Version>
+        <Version>0.1.2</Version>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+    </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System.Linq;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace XUnit.Extensions.Tests
@@ -52,6 +53,16 @@ namespace XUnit.Extensions.Tests
             var result = Diff.Generate("helo", "hello");
             Console.WriteLine(result);
             Assert.Equal("~ helo | ~ hello\n       |      + \n", result);
+        }
+
+        [Fact]
+        public void Incorrect_Piece_Count()
+        {
+            var result = Diff.Generate(
+            "namespace NUnit.sample\r\n{\r\n    using Xunit;\r\n    public class TestClass\r\n    {\r\n        [Fact]\r\n        public void TestCase()\r\n        {\r\n        }\r\n    }\r\n}\r\n",
+            "namespace NUnit.sample\r\n{\r\n    using Xun1it;\r\n    public class TestClass\r\n    {\r\n        [Fact]\r\n        public void TestCase()\r\n        {\r\n        }\r\n    }\r\n}\r\n");
+            var max = result.Split("\n").Max(s => s.Length);
+            
         }
     }
 }

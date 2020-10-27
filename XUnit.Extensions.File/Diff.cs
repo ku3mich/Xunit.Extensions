@@ -6,18 +6,18 @@ using DiffPlex.Chunkers;
 using DiffPlex.DiffBuilder;
 using DiffPlex.DiffBuilder.Model;
 
-namespace XUnit
+namespace Xunit
 {
     public class Diff : IDiff
     {
         public class Options
         {
             public bool IgnoreWhiteSpace { get; set; }
-            public bool IgnoreCase { get; set; }
+            ///public bool IgnoreCase { get; set; }
 
             public static Options Default = new Options
             {
-                IgnoreCase = false,
+                //IgnoreCase = false,
                 IgnoreWhiteSpace = false
             };
         }
@@ -32,22 +32,16 @@ namespace XUnit
         };
 
         static string DiffText(DiffPiece p) => $"{ChangeSymbol[p.Type]} {p.Text}";
-        static string DiffLine(DiffPiece p) =>
-            string.Concat(p.SubPieces.Select(s => new string(ChangeSymbol[s.Type], s.Text?.Length ?? 0)));
-        static string Padding(int length) => new string(' ', length);
-        public string Generate(string one, string two, Options options = null)
+        static string DiffLine(DiffPiece p) => string.Concat(p.SubPieces.Select(s => new string(ChangeSymbol[s.Type], s.Text?.Length ?? 0)));
+        static string Padding(int length) => length >= 0 ? new string(' ', length) : "";
+
+        static SideBySideDiffBuilder DiffBuilder = new SideBySideDiffBuilder(Differ.Instance, LineChunker.Instance, CharacterChunker.Instance);
+
+        public string Generate(string left, string right, Options options = null)
         {
             var opts = options ?? Options.Default;
 
-            // TDDO: support for chunkers
-            var model = SideBySideDiffBuilder.Diff(
-                Differ.Instance,
-                one,
-                two,
-                opts.IgnoreWhiteSpace,
-                opts.IgnoreCase,
-                LineChunker.Instance,
-                CharacterChunker.Instance);
+            var model = DiffBuilder.BuildDiffModel(left, right, opts.IgnoreWhiteSpace);
 
             var result = new StringBuilder();
 
