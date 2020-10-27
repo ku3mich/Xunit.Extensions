@@ -62,7 +62,7 @@ namespace XUnit.Extensions.Tests
             "namespace NUnit.sample\r\n{\r\n    using Xunit;\r\n    public class TestClass\r\n    {\r\n        [Fact]\r\n        public void TestCase()\r\n        {\r\n        }\r\n    }\r\n}\r\n",
             "namespace NUnit.sample\r\n{\r\n    using Xun1it;\r\n    public class TestClass\r\n    {\r\n        [Fact]\r\n        public void TestCase()\r\n        {\r\n        }\r\n    }\r\n}\r\n");
             var max = result.Split("\n").Max(s => s.Length);
-            
+            Assert.Equal(67, max);
         }
     }
 }
