@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Text.Diff;
 using Xunit;
 
 namespace XUnit.Extensions.File
@@ -7,7 +8,7 @@ namespace XUnit.Extensions.File
     {
         public static IServiceCollection AddXUnitFileExtensioins(this IServiceCollection services)
         {
-            services.AddSingleton<IDiff>(new Diff());
+            services.AddSingleton<ITextDiff>(new TextDiff());
             return services;
         }
     }

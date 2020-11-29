@@ -5,18 +5,19 @@
         <ProjectGuid>4bf9faf4-d53b-46e4-a8ef-f9d9da42ab03</ProjectGuid>
         <PackageId>XUnit.Extensions.File</PackageId>
         <PackageDescription>XUnit file data support</PackageDescription>
-        <Version>0.1.2</Version>
+        <Version>0.2</Version>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj">
         </ProjectReference>
-        <PackageReference Include="PlexDiff" Version="1.6.5" />
+        <PackageReference Include="Menees.Diffs" Version="4.9.10" />
         <PackageReference Include="xunit.core" Version="2.4.1" />
         <PackageReference Include="Xunit.DependencyInjection" Version="7.0.2" />
+		<PackageReference Include="Text.Diff" Version="0.1.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+      <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     </ItemGroup>
 </Project>

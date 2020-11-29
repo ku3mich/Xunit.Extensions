@@ -4,6 +4,7 @@
 		<Authors>Serhii Kuzmychov</Authors>
 		<Company />
 		<RepositoryUrl>https://github.com/ku3mich/XUnit.Extensions/</RepositoryUrl>
+		<LangVersion>8.0</LangVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
