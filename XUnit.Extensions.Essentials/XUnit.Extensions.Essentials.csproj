@@ -4,7 +4,7 @@
         <ProjectGuid>883e4402-3811-40f5-beca-9a6c971791bf</ProjectGuid>
         <PackageId>XUnit.Extensions.Essentials</PackageId>
         <PackageDescription>XUnit essentials</PackageDescription>
-        <Version>0.2</Version>
+        <Version>0.2.1</Version>
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj" />

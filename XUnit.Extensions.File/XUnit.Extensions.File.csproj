@@ -5,7 +5,7 @@
         <ProjectGuid>4bf9faf4-d53b-46e4-a8ef-f9d9da42ab03</ProjectGuid>
         <PackageId>XUnit.Extensions.File</PackageId>
         <PackageDescription>XUnit file data support</PackageDescription>
-        <Version>0.2</Version>
+        <Version>0.2.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
