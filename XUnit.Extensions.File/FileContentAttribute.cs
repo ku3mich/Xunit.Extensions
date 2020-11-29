@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using Xunit.Sdk;
 
@@ -7,18 +8,17 @@ namespace Xunit
 {
     public class FileContentAttribute : DataAttribute
     {
-        private readonly string FileName;
+        private readonly string[] FileNames;
 
-        public FileContentAttribute(string fileName)
+        public FileContentAttribute(params string[] fileNames)
         {
-            FileName = fileName;
+            FileNames = fileNames;
         }
 
         public override IEnumerable<object[]> GetData(MethodInfo testMethod)
         {
-            yield return new object[] {
-                File.ReadAllText(PathResolver.Instance.Resolve(FileName))
-            };
+            var prms = FileNames.Select(s => File.ReadAllText(PathResolver.Instance.Resolve(s))).Cast<object>().ToArray();
+            yield return prms;
         }
     }
 }
