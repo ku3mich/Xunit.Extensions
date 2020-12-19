@@ -33,7 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Antlr4.Next\Antlr4.Next.csproj" />
+        <ProjectReference Include="..\Helper4Antlr\Helper4Antlr.csproj" />
         <ProjectReference Include="..\Xunit.Extensions.Antlr4\Xunit.Extensions.Antlr4.csproj" />
         <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
         <ProjectReference Include="..\Xunit.Extensions.Essentials\Xunit.Extensions.Essentials.csproj" />

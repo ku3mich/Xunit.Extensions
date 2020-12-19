@@ -4,7 +4,7 @@
 using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 
-namespace Antlr4.Next
+namespace Antlr4
 {
     public class SyntaxErrorThrower : BaseErrorListener
     {

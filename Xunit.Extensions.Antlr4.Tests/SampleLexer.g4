@@ -1,7 +1,7 @@
 ﻿lexer grammar SampleLexer;
 
 options {
-    superClass = Antlr4.Next.Lexer;
+    superClass = Antlr4.Lexer;
 }
 
 A: 'A';

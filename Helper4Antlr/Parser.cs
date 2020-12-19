@@ -3,7 +3,7 @@
 
 using Antlr4.Runtime;
 
-namespace Antlr4.Next
+namespace Antlr4
 {
     public abstract class Parser : Runtime.Parser, IParser
     {

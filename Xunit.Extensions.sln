@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Extensions.Antlr4", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Extensions.Antlr4.Tests", "Xunit.Extensions.Antlr4.Tests\Xunit.Extensions.Antlr4.Tests.csproj", "{34420BF4-F2D4-4501-B337-9ABCEC989E78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Antlr4.Next", "Antlr4.Next\Antlr4.Next.csproj", "{8F7D53E2-D0F8-46C5-8FB4-717A7C5A7FBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helper4Antlr", "Helper4Antlr\Helper4Antlr.csproj", "{8F7D53E2-D0F8-46C5-8FB4-717A7C5A7FBA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Extensions.Logger", "Xunit.Extensions.Logger\Xunit.Extensions.Logger.csproj", "{5BC5A9B3-F4C4-4B00-8C0E-9BB0D37477EF}"
 EndProject

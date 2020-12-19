@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Antlr4.Next
+namespace Antlr4
 {
     public class SyntaxErrorException : Exception
     {

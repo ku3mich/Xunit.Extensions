@@ -1,7 +1,7 @@
 ﻿parser grammar SampleParser;
 
 options {
-    superClass = Antlr4.Next.Parser;
+    superClass = Antlr4.Parser;
     tokenVocab=SampleLexer;
 }
 

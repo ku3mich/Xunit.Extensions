@@ -5,7 +5,7 @@ using Antlr4.Runtime;
 using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 
-namespace Antlr4.Next
+namespace Antlr4
 {
     public interface IParser
     {

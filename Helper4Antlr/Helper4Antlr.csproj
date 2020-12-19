@@ -8,7 +8,12 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <ProjectGuid>8F7D53E2-D0F8-46C5-8FB4-717A7C5A7FBA</ProjectGuid>
+        <RootNamespace>Antlr4</RootNamespace>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="D:\prj\Xunit.Extensions\LICENSE" />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
