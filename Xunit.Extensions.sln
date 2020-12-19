@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\build.yml = .github\workflows\build.yml
 		common.props = common.props
 		common.targets = common.targets
+		LICENSE = LICENSE
 		package.props = package.props
 		README.md = README.md
 	EndProjectSection
@@ -25,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Extensions.Antlr4.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Antlr4.Next", "Antlr4.Next\Antlr4.Next.csproj", "{8F7D53E2-D0F8-46C5-8FB4-717A7C5A7FBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xunit.Extensions.Logger", "Xunit.Extensions.Logger\Xunit.Extensions.Logger.csproj", "{5BC5A9B3-F4C4-4B00-8C0E-9BB0D37477EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Extensions.Logger", "Xunit.Extensions.Logger\Xunit.Extensions.Logger.csproj", "{5BC5A9B3-F4C4-4B00-8C0E-9BB0D37477EF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xunit.Extensions.File", "Xunit.Extensions.File\Xunit.Extensions.File.csproj", "{4BF9FAF4-D53B-46E4-A8EF-F9D9DA42AB03}"
 EndProject

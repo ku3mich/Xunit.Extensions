@@ -6,6 +6,9 @@
     
     <PropertyGroup>
         <IsPackable>true</IsPackable>
-        <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="$(SolutionDir)LICENSE" Pack="true"/>
+    </ItemGroup>
 </Project>
