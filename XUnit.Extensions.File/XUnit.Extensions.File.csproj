@@ -1,23 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="$([MSBuild]::GetPathOfFileAbove(package.props))" />
+    <PropertyGroup>
+        <PackageProps>$([MSBuild]::GetPathOfFileAbove(package.props))</PackageProps>
+    </PropertyGroup>
+    <Import Project="$(PackageProps)" Condition="exists('$(PackageProps)')" />
 
     <PropertyGroup>
-        <ProjectGuid>4bf9faf4-d53b-46e4-a8ef-f9d9da42ab03</ProjectGuid>
-        <PackageId>XUnit.Extensions.File</PackageId>
-        <PackageDescription>XUnit file data support</PackageDescription>
-        <Version>0.2.1</Version>
+        <ProjectGuid>4BF9FAF4-D53B-46E4-A8EF-F9D9DA42AB03</ProjectGuid>
+        <PackageDescription>Xunit file data support</PackageDescription>
+        <Version>0.3</Version>
+        <TargetFramework>netstandard2.1</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj">
-        </ProjectReference>
+        <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
         <PackageReference Include="Menees.Diffs" Version="4.9.10" />
         <PackageReference Include="xunit.core" Version="2.4.1" />
-        <PackageReference Include="Xunit.DependencyInjection" Version="7.0.2" />
-		<PackageReference Include="Text.Diff" Version="0.1.0" />
+        <PackageReference Include="Text.Diff" Version="0.2.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+        <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     </ItemGroup>
 </Project>

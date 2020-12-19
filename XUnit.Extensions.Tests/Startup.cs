@@ -1,13 +1,14 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using XUnit.Extensions.Essentials;
+﻿// Copyright (C) 2020 Serhii Kuzmychov (ku3mich@gmail.com)
+// Licensed under the terms of the MIT license. See LICENCE for details.
 
-namespace XUnit.Extensions.Tests
+using Microsoft.Extensions.Hosting;
+using Xunit.Extensions.Essentials;
+
+namespace Xunit.Extensions.Tests
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddXUnitEssentials();
-        }
+        public void ConfigureHost(IHostBuilder hostBuilder) =>
+            hostBuilder.ConfigureXunitEssentials();
     }
 }

@@ -1,13 +1,17 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Xunit;
+﻿// Copyright (C) 2020 Serhii Kuzmychov (ku3mich@gmail.com)
+// Licensed under the terms of the MIT license. See LICENCE for details.
 
-namespace XUnit.Extensions.Core
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Xunit.Extensions.Core
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddXUnitCoreExtensions(this IServiceCollection services)
+        public static IServiceCollection AddXunitCoreExtensions(this IServiceCollection services)
         {
-            services.AddSingleton<IPathResolver>(s => PathResolver.Instance);
+            services
+                .AddSingleton(s => PathResolver.Instance);
+
             return services;
         }
     }

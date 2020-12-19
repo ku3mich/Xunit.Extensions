@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (C) 2020 Serhii Kuzmychov (ku3mich@gmail.com)
+// Licensed under the terms of the MIT license. See LICENCE for details.
+
+using System;
 using System.IO;
 
 namespace Xunit
@@ -18,11 +21,12 @@ namespace Xunit
 
         public string Resolve(string relative)
         {
-            if (Path.IsPathRooted(relative))
+            var p = relative ?? string.Empty;
+            if (Path.IsPathRooted(p))
                 throw new ArgumentException("path should be relative path");
 
             // TODO: check outside the root 
-            return Path.Combine(Root, relative);
+            return Path.Combine(Root, p);
         }
     }
 }

@@ -1,9 +1,13 @@
+// Copyright (C) 2020 Serhii Kuzmychov (ku3mich@gmail.com)
+// Licensed under the terms of the MIT license. See LICENCE for details.
+
 using System;
 using System.IO;
-using Xunit;
+using Microsoft.Extensions.Logging;
 
-namespace XUnit.Extensions.Tests
+namespace Xunit.Extensions.Tests
 {
+
     public class CoreTests
     {
         [Theory]
@@ -16,8 +20,8 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void PathResolverResolves()
         {
-            var p = typeof(CoreTests).Assembly.Location;
-            var t = Path.GetDirectoryName(p);
+            string p = typeof(CoreTests).Assembly.Location;
+            string t = Path.GetDirectoryName(p);
             Assert.Equal(t, PathResolver.Instance.Resolve(""));
         }
 

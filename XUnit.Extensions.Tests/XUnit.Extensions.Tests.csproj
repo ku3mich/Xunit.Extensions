@@ -1,11 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="$([MSBuild]::GetPathOfFileAbove(common.props))" />
+    <PropertyGroup>
+        <CommonProps>$([MSBuild]::GetPathOfFileAbove(common.props))</CommonProps>
+    </PropertyGroup>
+    <Import Project="$(CommonProps)" Condition="exists('$(CommonProps)')" />
 
     <PropertyGroup>
-        <ProjectGuid>358c6df1-f6e3-4ec6-80d8-d4cd4525fd95</ProjectGuid>
-        <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
-        <IsPackable>false</IsPackable>
-        <RootNamespace>XUnit.Extensions.Tests</RootNamespace>
+        <ProjectGuid>358C6DF1-F6E3-4EC6-80D8-D4CD4525FD95</ProjectGuid>
+        <RootNamespace>Xunit.Extensions.Tests</RootNamespace>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,7 +15,8 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <PrivateAssets>all</PrivateAssets>
@@ -23,6 +26,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -32,12 +36,13 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\XUnit.Extensions.Core\XUnit.Extensions.Core.csproj" />
-        <ProjectReference Include="..\XUnit.Extensions.Essentials\XUnit.Extensions.Essentials.csproj" />
-        <ProjectReference Include="..\XUnit.Extensions.File\XUnit.Extensions.File.csproj" />
+        <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
+        <ProjectReference Include="..\Xunit.Extensions.Essentials\Xunit.Extensions.Essentials.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 </Project>

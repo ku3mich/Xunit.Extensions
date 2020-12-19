@@ -1,9 +1,10 @@
-﻿using System.Linq;
+﻿// Copyright (C) 2020 Serhii Kuzmychov (ku3mich@gmail.com)
+// Licensed under the terms of the MIT license. See LICENCE for details.
+
 using Text.Diff;
-using Xunit;
 using Xunit.Abstractions;
 
-namespace XUnit.Extensions.Tests
+namespace Xunit.Extensions.Tests
 {
     public class DiffTests
     {
@@ -19,7 +20,7 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void UnchangedLine()
         {
-            var result = Diff.Generate("asd", "asd");
+            string result = Diff.Generate("asd", "asd");
             Console.WriteLine(result);
             Assert.Equal("  asd |   asd\n", result);
         }
@@ -27,7 +28,7 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void AddedLine()
         {
-            var result = Diff.Generate("asd\nqwe", "asd");
+            string result = Diff.Generate("asd\nqwe", "asd");
             Console.WriteLine(result);
             Assert.Equal("  asd |   asd\n- qwe |   \n", result);
         }
@@ -35,7 +36,7 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void ChangedSymbol()
         {
-            var result = Diff.Generate("asQWE rt", "asqwe rt");
+            string result = Diff.Generate("asQWE rt", "asqwe rt");
             Console.WriteLine(result);
             Assert.Equal("~ asQWE rt | ~ asqwe rt\n    ~~~    |     ~~~\n", result);
         }
@@ -43,7 +44,7 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void DeletedSymbol()
         {
-            var result = Diff.Generate("hello", "helo");
+            string result = Diff.Generate("hello", "helo");
             Console.WriteLine(result);
             Assert.Equal("~ hello | ~ helo\n     -  |   \n", result);
         }
@@ -51,7 +52,7 @@ namespace XUnit.Extensions.Tests
         [Fact]
         public void AddedSymbol()
         {
-            var result = Diff.Generate("helo", "hello");
+            string result = Diff.Generate("helo", "hello");
             Console.WriteLine(result);
             Assert.Equal("~ helo | ~ hello\n       |      +\n", result);
         }

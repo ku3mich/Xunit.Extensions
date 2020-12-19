@@ -4,6 +4,6 @@
             <PowerShellExe Condition=" '$(PowerShellExe)'=='' ">%WINDIR%\System32\WindowsPowerShell\v1.0\powershell.exe</PowerShellExe>
         </PropertyGroup>
         <Message Text="Calling Mr.Proper ..." />
-        <Exec Command="$(PowerShellExe) -NonInteractive -executionpolicy Unrestricted -f &quot;$(SolutionDir)clean.ps1&quot;" />
+        <Exec Command="$(PowerShellExe) -NoProfile -NonInteractive -executionpolicy Unrestricted -f &quot;$(SolutionDir)clean.ps1&quot;" />
     </Target>
 </Project>
