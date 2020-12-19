@@ -45,5 +45,5 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg -o ./nupkg
     - name: nupkg push
-      run: find ./nupkg -name '*.nupkg' | xargs -I{} nuget push {} $NUGET_KEY -source $NUGET_FEED
+      run: find ./nupkg -name '*.nupkg' -exec nuget push {} $NUGET_KEY -source $NUGET_FEED \;
       
