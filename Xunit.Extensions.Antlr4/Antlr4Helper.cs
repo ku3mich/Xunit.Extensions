@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Copyright (C) 2020 Serhii Kuzmychov (ku3mich@gmail.com)
+// Licensed under the terms of the MIT license. See LICENCE for details.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Antlr4.Runtime;
@@ -33,8 +36,8 @@ namespace Xunit.Extensions.Antlr4
         public ITokenStream CreateStream(string text)
         {
             Logger.LogDebug(text);
-            var lexer = CreateLexer(text);
-            var tokenStream = new CommonTokenStream(lexer);
+            TLexer lexer = CreateLexer(text);
+            CommonTokenStream tokenStream = new CommonTokenStream(lexer);
             tokenStream.Fill();
 
             Logger.LogDebug(
@@ -59,7 +62,7 @@ namespace Xunit.Extensions.Antlr4
 
             if (ListnersFactory != null)
             {
-                foreach (var listnerFactory in ListnersFactory)
+                foreach (Func<IParseTreeListener> listnerFactory in ListnersFactory)
                     parser.AddParseListener(listnerFactory());
             }
 

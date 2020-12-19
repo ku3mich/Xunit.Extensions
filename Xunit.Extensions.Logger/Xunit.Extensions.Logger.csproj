@@ -6,7 +6,7 @@
 
     <PropertyGroup>
         <ProjectGuid>5BC5A9B3-F4C4-4B00-8C0E-9BB0D37477EF</ProjectGuid>
-        <PackageVersion>0.1.2</PackageVersion>
+        <PackageVersion>0.1.3</PackageVersion>
         <TargetFramework>netstandard2.1</TargetFramework>
     </PropertyGroup>
 

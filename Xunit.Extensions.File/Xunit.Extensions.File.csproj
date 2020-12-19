@@ -7,7 +7,7 @@
     <PropertyGroup>
         <ProjectGuid>4BF9FAF4-D53B-46E4-A8EF-F9D9DA42AB03</ProjectGuid>
         <PackageDescription>Xunit file data support</PackageDescription>
-        <Version>0.3.2</Version>
+        <Version>0.3.3</Version>
         <TargetFramework>netstandard2.1</TargetFramework>
     </PropertyGroup>
 

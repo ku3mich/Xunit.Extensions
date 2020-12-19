@@ -19,9 +19,9 @@ namespace Xunit
             Root = root;
         }
 
-        public string Resolve(string relative)
+        public string Resolve(string relative = null)
         {
-            var p = relative ?? string.Empty;
+            string p = relative ?? string.Empty;
             if (Path.IsPathRooted(p))
                 throw new ArgumentException("path should be relative path");
 
