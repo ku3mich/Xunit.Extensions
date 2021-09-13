@@ -1,24 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <PackageProps>$([MSBuild]::GetPathOfFileAbove(package.props))</PackageProps>
-    </PropertyGroup>
-    <Import Project="$(PackageProps)" Condition="exists('$(PackageProps)')" />
+  <PropertyGroup>
+    <PackageProps>$([MSBuild]::GetPathOfFileAbove(package.props))</PackageProps>
+  </PropertyGroup>
+  <Import Project="$(PackageProps)" Condition="exists('$(PackageProps)')" />
 
-    <PropertyGroup>
-        <ProjectGuid>4BF9FAF4-D53B-46E4-A8EF-F9D9DA42AB03</ProjectGuid>
-        <PackageDescription>Xunit file data support</PackageDescription>
-        <Version>0.3.5</Version>
-        <TargetFramework>netstandard2.1</TargetFramework>
-    </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>4BF9FAF4-D53B-46E4-A8EF-F9D9DA42AB03</ProjectGuid>
+    <PackageDescription>Xunit file data support</PackageDescription>
+    <Version>0.4.1</Version>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
-        <PackageReference Include="Menees.Diffs" Version="4.9.10" />
-        <PackageReference Include="xunit.core" Version="2.4.1" />
-        <PackageReference Include="Text.Diff" Version="0.2.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
+    <PackageReference Include="Menees.Diffs" Version="4.9.11" />
+    <PackageReference Include="xunit.core" Version="2.4.1" />
+    <PackageReference Include="Text.Diff" Version="0.2.0" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
 </Project>

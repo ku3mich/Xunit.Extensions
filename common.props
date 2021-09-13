@@ -1,20 +1,20 @@
 <Project>
-    <PropertyGroup>
-        <RootNamespace>Xunit</RootNamespace>
-        <Authors>Serhii Kuzmychov</Authors>
-        <Company />
-        <RepositoryUrl>https://github.com/ku3mich/Xunit.Extensions/</RepositoryUrl>
-        <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Xunit</RootNamespace>
+    <Authors>Serhii Kuzmychov</Authors>
+    <Company />
+    <RepositoryUrl>https://github.com/ku3mich/Xunit.Extensions/</RepositoryUrl>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Update="SonarAnalyzer.CSharp" Version="8.13.1.21947">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-    </ItemGroup>
-    <PropertyGroup>
-        <CommonTargets>$([MSBuild]::GetPathOfFileAbove(common.targets))</CommonTargets>
-    </PropertyGroup>
-    <Import Project="$(CommonTargets)" Condition="exists('$(CommonTargets)')" />
+  <ItemGroup>
+    <PackageReference Update="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <CommonTargets>$([MSBuild]::GetPathOfFileAbove(common.targets))</CommonTargets>
+  </PropertyGroup>
+  <Import Project="$(CommonTargets)" Condition="exists('$(CommonTargets)')" />
 </Project>

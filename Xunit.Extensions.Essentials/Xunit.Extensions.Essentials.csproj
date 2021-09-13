@@ -1,25 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <PackageProps>$([MSBuild]::GetPathOfFileAbove(package.props))</PackageProps>
-    </PropertyGroup>
-    <Import Project="$(PackageProps)" Condition="exists('$(PackageProps)')" />
+  <PropertyGroup>
+    <PackageProps>$([MSBuild]::GetPathOfFileAbove(package.props))</PackageProps>
+  </PropertyGroup>
+  <Import Project="$(PackageProps)" Condition="exists('$(PackageProps)')" />
 
-    <PropertyGroup>
-        <ProjectGuid>883E4402-3811-40F5-BECA-9A6C971791BF</ProjectGuid>
-        <PackageId>Xunit.Extensions.Essentials</PackageId>
-        <Version>0.3.3</Version>
-        <TargetFramework>netstandard2.1</TargetFramework>
-    </PropertyGroup>
-    <ItemGroup>
-        <PackageReference Include="XunitContext" Version="3.0.0" />
-    </ItemGroup>
-    <ItemGroup>
-        <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
-        <ProjectReference Include="..\Xunit.Extensions.File\Xunit.Extensions.File.csproj" />
-        <ProjectReference Include="..\Xunit.Extensions.Logger\Xunit.Extensions.Logger.csproj" />
-    </ItemGroup>
-    <ItemGroup>
-        <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-        <PackageReference Include="Xunit.DependencyInjection" Version="7.1.0" />
-    </ItemGroup>
+  <PropertyGroup>
+    <ProjectGuid>883E4402-3811-40F5-BECA-9A6C971791BF</ProjectGuid>
+    <PackageId>Xunit.Extensions.Essentials</PackageId>
+    <Version>0.4.1</Version>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="XunitContext" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xunit.Extensions.Core\Xunit.Extensions.Core.csproj" />
+    <ProjectReference Include="..\Xunit.Extensions.File\Xunit.Extensions.File.csproj" />
+    <ProjectReference Include="..\Xunit.Extensions.Logger\Xunit.Extensions.Logger.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+    <PackageReference Include="Xunit.DependencyInjection" Version="7.6.0" />
+  </ItemGroup>
 </Project>
